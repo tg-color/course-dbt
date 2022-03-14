@@ -6,12 +6,13 @@ WEEK 1 PROJECT
 HOW MANY USERS DO WE HAVE?
 user_count = 130
 
+```sql
 select 
 
 count (distinct user_guid ) as user_count
 
 from dbt.dbt_travis_g.stg_users
-
+```
 **QUESTION TWO**
 
 ON AVERAGE, HOW MANY ORDERS DO WE RECEIVE PER HOUR?
