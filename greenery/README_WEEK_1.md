@@ -14,7 +14,7 @@ from dbt.dbt_travis_g.stg_users
 ```
 **QUESTION TWO** - ON AVERAGE, HOW MANY ORDERS DO WE RECEIVE PER HOUR?
 
-**Answer: 7.53 order** 
+**Answer: 7.53 orders** 
 ```sql
 select
 
