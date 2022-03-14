@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_promos
+    description: promo information
+columns:
+      - name: promo_id
+        description: pk character varying promo id
+        tests:
+          - not_null
+          - unique 
+      - name: discount
+        description: the amount of the discount in whole number e.g. 2% discount = 2
+      - name: status
+        description: status of the promo, e.g. active or inactive

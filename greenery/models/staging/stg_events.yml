@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: stg_events
+    description: events information
+columns:
+      - name: event_id 
+        description: pk character varying event_id
+        tests:
+          - not_null
+          - unique 
+      - name: session_id
+        description: character varying session_id
+        tests:
+          - not_null
+          - unique         
+      - name: user_id
+        description: character varying user_id
+        tests:
+          - not_null
+      - name: page_url
+        description: specific URL of the event_type
+      - name: created_at
+        description: date w/no timezone        
+      - name: event_type
+        description: type of event, e.g. checkout, pakage shipped, add_to_cart, page_view etc.
+      - name: order_id
+        description: character varying order_id will be null if non-order event 
+      - name: product_id
+        description: general varying character product_id
+  

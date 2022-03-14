@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: stg_superheroes
+    description: superhero information
+columns:
+      - name: superhero_id
+        description: character varying superhero_id
+        tests:
+          - not_null
+          - unique 
+      - name: name
+        description: superhero name
+      - name: gender
+        description: superhero gender
+      - name: eye_color
+        description: superhero eye color
+      - name: race
+        description: superhero race
+      - name: hair_color
+        description: superhero hair color
+      - name: height
+        description: superhero height
+      - name: publisher
+        description: super hero publisher e.g. marvel, dark horse, dc. etc
+      - name: skin_color
+        description: super hero skin color
+      - name: alignment
+        description: super hero alignment e.g. good, bad. haven't found indifferent yet lol
+      - name: weight
+        description: superhero weight
+      - name: created_at
+        description: superhero record created at date no timezone
+      - name: updated_at
+        description: superhero record updated at date no timezone

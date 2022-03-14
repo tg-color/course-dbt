@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: stg_addresses
+    description: address information
+columns:
+      - name: address_id
+        description: pk character varying address id
+        tests:
+          - not_null
+          - unique 
+      - name: address
+        description: street address
+      - name: zipcode
+        description: address zipcode
+      - name: state
+        description: address state
+      - name: country
+        description: address country
+
+

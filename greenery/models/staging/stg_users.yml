@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: stg_users
+    description: user information
+columns:
+      - name: user_id
+        description: pk character varying user_id
+        tests:
+          - not_null
+          - unique 
+      - name: first_name
+        description: first name of the user
+      - name: last_name
+        description: last name of the user
+      - name: email
+        description: the email of the user
+      - name: phone_number
+        description: the phone number of the user
+      - name: created_at
+        description: the date the user was created no timezone
+      - name: updated_at
+        description: the date the user was updated at no timezone
+      - name: address_id
+        description: character varying address id
