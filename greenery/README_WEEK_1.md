@@ -4,6 +4,7 @@ WEEK 1 PROJECT
 **QUESTION ONE**
 
 HOW MANY USERS DO WE HAVE?
+
 **Answer: 130**
 
 ```sql
@@ -16,6 +17,7 @@ from dbt.dbt_travis_g.stg_users
 **QUESTION TWO**
 
 ON AVERAGE, HOW MANY ORDERS DO WE RECEIVE PER HOUR?
+
 **Answer: 7.53 order** 
 ```sql
 select
@@ -31,6 +33,7 @@ from dbt.dbt_travis_g.stg_orders
 **QUESTION THREE**
 
 ON AVERAGE, HOW LONG DOES AN ORDER TAKE FROM BEING PLACED TO BEING DELIVERED?
+
 **Asnwer 3.89 days or 93 hours**
 ```sql
 with order_time as
@@ -57,6 +60,7 @@ from order_time
 **QUESTION FOUR**
 
 HOW MANY USERS HAVE ONLY MADE ONE PURCHASE? TWO PURCHASES? THREE+ PURCHASES?
+
 **Answer:**
 
 | orders_group | user_count |
@@ -94,6 +98,7 @@ group by 1
 **QUESTION FIVE**
 
 ON AVERAGE, HOW MANY UNIQUE SESSIONS DO WE HAVE PER HOUR?
+
 **Answer: 16.33**
 
 ```sql
