@@ -58,9 +58,12 @@ from order_time
 **QUESTION FOUR**
 
 HOW MANY USERS HAVE ONLY MADE ONE PURCHASE? TWO PURCHASES? THREE+ PURCHASES?
-1 purchase  | 25
-2 purchases | 28
-3 purchases | 71
+
+| orders_group | user_count |
+| ----------- | ----------- |
+| 1 purchase  | 25 |
+| 2 purchases | 28 |
+| 3 purchases | 71 |
 ```sql
 with purchases as
 (
