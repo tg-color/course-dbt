@@ -109,8 +109,7 @@ from dbt.dbt_travis_g.stg_events
 
 group by 1
 )
-
-
+```
 -- the wrong way, the first way I did it
 62 (62.32)
 ```sql
