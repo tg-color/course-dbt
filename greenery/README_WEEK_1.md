@@ -4,7 +4,7 @@ WEEK 1 PROJECT
 **QUESTION ONE**
 
 HOW MANY USERS DO WE HAVE?
-user_count = 130
+**Answer: 130**
 
 ```sql
 select 
@@ -16,7 +16,7 @@ from dbt.dbt_travis_g.stg_users
 **QUESTION TWO**
 
 ON AVERAGE, HOW MANY ORDERS DO WE RECEIVE PER HOUR?
-7.53 orders per hour on average 
+**Answer: 7.53 order** 
 ```sql
 select
 
@@ -31,8 +31,7 @@ from dbt.dbt_travis_g.stg_orders
 **QUESTION THREE**
 
 ON AVERAGE, HOW LONG DOES AN ORDER TAKE FROM BEING PLACED TO BEING DELIVERED?
-3.89 days
-93 hours
+**Asnwer 3.89 days or 93 hours**
 ```sql
 with order_time as
 (
@@ -58,6 +57,7 @@ from order_time
 **QUESTION FOUR**
 
 HOW MANY USERS HAVE ONLY MADE ONE PURCHASE? TWO PURCHASES? THREE+ PURCHASES?
+**Answer:**
 
 | orders_group | user_count |
 | ----------- | ----------- |
@@ -94,9 +94,8 @@ group by 1
 **QUESTION FIVE**
 
 ON AVERAGE, HOW MANY UNIQUE SESSIONS DO WE HAVE PER HOUR?
-16.33
+**Answer: 16.33**
 
---the right way copied from Zack
 ```sql
 with sessions_per_hour as 
 (
@@ -109,22 +108,8 @@ from dbt.dbt_travis_g.stg_events
 
 group by 1
 )
-```
--- the wrong way, the first way I did it
-62 (62.32)
-```sql
+
 select
 round(avg(count_sessions), 2)
 from sessions_per_hour
---group by 2
-select
-
-min(event_created_at_date) as min_event_date
-, max(event_created_at_date) as max_event_date
-, round(EXTRACT (EPOCH FROM (max(event_created_at_date) - min(event_created_at_date))/3600)) as total_event_hours 
-, count (distinct session_guid) as total_sessions
-, count (distinct event_guid)/ EXTRACT (EPOCH FROM (max(event_created_at_date) - min(event_created_at_date))/3600) as avg_sessions_hour
-, round(count (distinct event_guid)/ EXTRACT (EPOCH FROM (max(event_created_at_date) - min(event_created_at_date))/3600)) as avg_sessions_hour_rnd
-
-from dbt.dbt_travis_g.stg_events
 ```
