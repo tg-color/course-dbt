@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: cln_superheroes
+    description: superhero information
+    columns:
+      - name: superhero_guid
+        description: character varying superhero_id
+        tests:
+          - not_null
+          - unique 
+      - name: superhero_name
+        description: superhero name
+      - name: superhero_gender
+        description: superhero gender
+      - name: superhero_eye_color
+        description: superhero eye color
+      - name: superhero_race
+        description: superhero race
+      - name: superhero_hair_color
+        description: superhero hair color
+      - name: superhero_height
+        description: superhero height
+        tests:
+          - positive_values
+      - name: superhero_publisher
+        description: super hero publisher e.g. marvel, dark horse, dc. etc
+      - name: superhero_skin_color
+        description: super hero skin color
+      - name: superhero_alignment
+        description: super hero alignment e.g. good, bad. haven't found indifferent yet lol
+      - name: superhero_weight
+        description: superhero weight
+        tests:
+          - positive_values
+      - name: created_at_utc
+        description: superhero record created at date utc
+      - name: updated_at_utc
+        description: superhero record updated at date utc

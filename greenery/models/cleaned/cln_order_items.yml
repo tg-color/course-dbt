@@ -1,18 +1,16 @@
 version: 2
 
 models:
-  - name: stg_order_items
+  - name: cln_order_items
     description: ordered items information
-columns:
-      - name: order_id
+    columns:
+      - name: order_guid
         description: pk character varying order_id
         tests:
           - not_null
-          - unique 
-      - name: product_id
+      - name: product_guid
         description: character varying product_id
         tests:
           - not_null
-          - unique 
-      - name: quantity
+      - name: product_quantity
         description: quantity of product_id

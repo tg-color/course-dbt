@@ -1,10 +1,10 @@
 version: 2
 
 models:
-  - name: stg_addresses
+  - name: cln_addresses
     description: address information
-columns:
-      - name: address_id
+    columns:
+      - name: address_guid
         description: pk character varying address id
         tests:
           - not_null

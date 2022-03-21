@@ -1,38 +1,37 @@
 version: 2
 
 models:
-  - name: stg_orders
+  - name: cln_orders
     description: orders information
-columns:
-      - name: order_id
+    columns:
+      - name: order_guid
         description: pk character varying order_id
         tests:
           - not_null
           - unique 
-      - name: user_id
+      - name: user_guid
         description: character varying user_id
         tests:
           - not_null
-          - unique  
-      - name: promo_id
+      - name: promo_name
         description: character varying promo_id
-      - name: address_id
+      - name: address_guid
         description: character varying address id
-      - name: created_at
-        description: date w/no timezone
-      - name: order_cost
+      - name: order_created_at_date_utc
+        description: date utc
+      - name: order_cost_usd
         description: how much the order cost without shipping
-      - name: shipping_cost
+      - name: order_shipping_cost_usd
         description: how much the shipping charges were
-      - name: order_total
+      - name: order_total_cost_usd
         description: total cost of the oder including shipping
-      - name: tracking_id
+      - name: order_tracking_id
         description: character varying tracking_id id
-      - name: shipping_service
+      - name: order_shipping_service
         description: carrier who fulfilled the order e.g. ups, usps, fedex
-      - name: estimated_delivery_at
-        description: estimated date of delivery no timezone
-      - name: delivered_at
-        description: actual date of delivery no timezone
-      - name: status
+      - name: order_estimated_delivery_date_utc
+        description: estimated date of delivery utc
+      - name: order_delivered_at_date_utc
+        description: actual date of delivery utc
+      - name: order_status
         description: status of the order, e.g. preparing, shipped, delivered

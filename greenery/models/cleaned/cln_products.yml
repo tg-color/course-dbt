@@ -1,21 +1,21 @@
 version: 2
 
 models:
-  - name: stg_products
+  - name: cln_products
     description: ordered items information
-columns:
-      - name: product_id
+    columns:
+      - name: product_guid
         description: character varying product_id
         tests:
           - not_null
           - unique 
-      - name: name
+      - name: product_name
         description: the name of the product
           - not_null
           - unique 
-      - name: price
-        description: the price of the product
+      - name: product_price_usd
+        description: the price of the product in USD
           - not_null
           - unique 
-      - name: inventory
+      - name: product_inventory
         description: the amount of the product available
