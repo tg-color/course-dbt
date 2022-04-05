@@ -1,3 +1,5 @@
+/* should be one line item per user */
+
 {{
   config(
     materialized='table'
@@ -19,14 +21,14 @@ select
      , fuo.user_country
      , count (fuo.order_guid) as user_order_count
     , case
-           when count (fuo.order_guid) >= 1 then 1.0
+           when count (fuo.order_guid) = 1 then 1.0
            else 0
       end is_purchased_user
     , case
            when count (fuo.order_guid) > 1 then 1.0
            else 0
       end is_repeat_purchase_user
-     , count (fuo.promo_name) as user_promot_total
+     , count (fuo.promo_name) as user_promo_total
      , avg (fuo.promo_discount_pct) as avg_discount_pct
      , sum (fuo.is_shipped) as total_orders_shipped
      , sum (fuo.is_delivered) as total_orders_delivered
@@ -38,5 +40,5 @@ select
 
 from {{ ref('fact_user_order') }} fuo
 
-
-group by (1,2,3,4,5,6,7,8,9,10,11)
+{{ dbt_utils.group_by(n=11) }}
+--group by (1,2,3,4,5,6,7,8,9,10,11)

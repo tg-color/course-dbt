@@ -35,6 +35,8 @@ select
     , co.order_cost_usd
     , co.order_shipping_cost_usd
     , co.order_total_cost_usd
+    , coi.product_guid
+    , cpdt.product_name    
     , min (co.order_created_at_date_utc) as is_first_order
     , max (co.order_created_at_date_utc) as is_latest_order
 -- I had some issues with creating an int table for order items to aggregate things in other ways before bringing in these below
@@ -47,9 +49,11 @@ FROM {{ ref('cln_orders') }} co
 left join {{ ref('cln_addresses') }} ca on co.address_guid = ca.address_guid
 left join {{ ref('cln_promos') }} cp on co.promo_name = cp.promo_name
 left join {{ ref('cln_users') }} cu on co.user_guid = cu.user_guid
-left join {{ ref('cln_order_items') }} coi on coi.order_guid = co.order_guid
+left join {{ ref('cln_order_items') }} coi on co.order_guid = coi.order_guid
+left join {{ ref('cln_products') }} cpdt on coi.product_guid = cpdt.product_guid
 
-{{ dbt_utils.group_by(n=23) }}
+
+{{ dbt_utils.group_by(n=25) }}
 
 --group by (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23)
 

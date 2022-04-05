@@ -56,19 +56,6 @@ from {{ ref('dim_users') }} du
 
 inner join {{ ref('dim_orders')}} dor on du.user_guid = dor.user_guid
 
-group by (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40)
+--group by (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40)
 
 
-/*
-figure out how to add this flag
-   
-   
-    , case
-           when (dor.is_first_order) is not null then 1
-           else 0
-      end is_first_order    
-    , case
-           when (dor.is_latest_order) is not null then 1
-           else 0
-      end is_latest_order
-      */

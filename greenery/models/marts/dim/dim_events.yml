@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: dim_events
+    description: events information dimension
+    columns:
+      - name: event_guid
+        description: character varying event id
+        tests:
+          - not_null
+          - unique 
+      - name: session_guid
+        description: character varying session id
+      - name: user_guid
+        description: character varying user id
+      - name: event_page_url
+        description: url for the event page
+      - name: event_created_at_date_utc
+        description: timestampe for event create at
+      - name: event_year
+        description: year in YYYY format from event created at time stamp
+      - name: event_month
+        description: month in Month format from event created at time stamp
+      - name: event_day
+        description:  event in Day format from event created at time stamp
+      - name: event_type
+        description: type of event
+      - name: is_add_to_cart
+        description:  flag 1 or 0 value for add to cart or not
+      - name: checkout_no_order
+        description: flag 1 or 0 for checkout event without an order_guid or not
+      - name: is_checkout
+        description: flag 1 or 0 for checkout event with order_guid or not
+      - name: is_page_view
+        description:  flag 1 or 0 value for page view or not
+      - name: is_shipped
+        description: flag 1 or 0 for order shipped or not
+      - name: order_guid
+        description: varying character order id

@@ -1,0 +1,61 @@
+version: 2
+
+models:
+  - name: 
+    description: 
+    columns:
+      - name: 
+        description: 
+        tests:
+          - not_null
+          - unique 
+      - name: 
+        description: 
+      - name: 
+        description: 
+      - name: 
+        description: 
+      - name: 
+        description: 
+      - name: 
+        description: 
+      - name: 
+        description: 
+      - name:
+        description:
+      - name: 
+        description: 
+      - name: 
+        description:  
+      - name: 
+        description: 
+      - name: 
+        description: 
+      - name: 
+        description:
+      - name:
+        description:
+      - name:
+        description:
+--15 columns above
+      - name: 
+        description: 
+      - name: 
+        description: 
+      - name:
+        description:
+      - name: 
+        description: 
+      - name: 
+        description:  
+      - name: 
+        description: 
+      - name: 
+        description: 
+      - name: 
+        description:
+      - name:
+        description:
+      - name:
+        description:
+--10 columns above

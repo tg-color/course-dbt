@@ -15,11 +15,11 @@ select
     , cu.user_created_at_utc
     , to_char(cu.user_created_at_utc, 'yyyy') as user_created_year
     , to_char(cu.user_created_at_utc, 'Month') as user_created_month
-    , to_char(cu.user_created_at_utc, 'dd') as user_created_day
+    , to_char(cu.user_created_at_utc, 'Day') as user_created_day
     , cu.user_updated_at_utc
     , to_char(cu.user_updated_at_utc, 'yyyy') as user_updated_year
     , to_char(cu.user_updated_at_utc, 'Month') as user_updated_month
-    , to_char(cu.user_updated_at_utc, 'dd') as user_updated_day
+    , to_char(cu.user_updated_at_utc, 'Day') as user_updated_day
 --  , would like to add customer tenure in (years, months, days) but was having trouble/moved on. 
     , ca.address as user_address
     , ca.zipcode as user_zipcode

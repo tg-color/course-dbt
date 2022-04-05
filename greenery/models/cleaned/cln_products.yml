@@ -11,11 +11,12 @@ models:
           - unique 
       - name: product_name
         description: the name of the product
+        tests:
           - not_null
           - unique 
       - name: product_price_usd
         description: the price of the product in USD
+        tests:
           - not_null
-          - unique 
       - name: product_inventory
         description: the amount of the product available
