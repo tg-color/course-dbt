@@ -67,8 +67,8 @@ order by 3 desc
 
 Create a macro to simplify part of a model(s)
 
-I did not create a new one. I was going to create open to aggregate event types but I was behind and didn't want to create any field naming issues
-downstream by chaning my case statments.
+I did not create a new one. I was going to create one to aggregate event types but I was behind and didn't want to create any field naming issues
+downstream by changing my case statments.
 
 I did use a group by macro in most places I had large group by statements
 
